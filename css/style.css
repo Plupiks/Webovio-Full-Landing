@@ -296,26 +296,28 @@ ul {
 }
 .features-block3__left {
   position: relative;
+  width: 50%;
 }
 .features-block3__image {
+  --features-block3__image-width: 50vw;
   position: relative;
-  width: 50vw;
+  flex: 0 0 50%;
+  width: var(--features-block3__image-width);
   min-height: 550px;
   overflow: hidden;
 }
 .features-block3__image img {
-  position: absolute;
-  z-index: 1;
   max-width: 100%;
   min-height: 550px;
   object-fit: cover;
 }
 .fetures-block3__quote {
+  --quote__width: 453px;
   position: absolute;
   top: 372px;
-  left: 323px;
+  left: calc(42vw - (var(--quote__width) * 0.6));
   z-index: 10;
-  width: 453px;
+  width: var(--quote__width);
   min-height: 243px;
   background: #ffffff;
   box-shadow: 50px 50px 100px rgba(0, 0, 0, 0.145947);
