@@ -299,8 +299,7 @@ ul {
 }
 .features-block3__image {
   position: relative;
-  flex: 0 0 50%;
-  width: 735px;
+  width: 50vw;
   min-height: 550px;
   overflow: hidden;
 }
