@@ -9,21 +9,21 @@ function removeQuote() {
 }
 
 function addQuote() {
-  if ($('window').width() >= 992) {
-    $('.features-block__image').click(function(e) {
-      e.stopPropagation();
+ $('.features-block__image').click(function(e) {
+    e.stopPropagation();
+    if ($(window).width() > 992) {
       var xClick = e.pageX - $(this).offset().left;
       var yClick = e.pageY - $(this).offset().top;
       $(this).next('.fetures-block__quote').css({
         "top": yClick,
         "left": xClick
       }).toggleClass('quote-active');
-    })
-  } else {
-    $('.features-block__image').click(function() {
-      return false;
-    })
-  }
+    } else {
+      $('.features-block__image').click(function(){
+        return false;
+      })
+    }
+  })
 }
 
 $(window).on('load resize', addQuote())
