@@ -309,6 +309,7 @@ ul {
   width: 50%;
 }
 .features-block__image {
+  cursor: pointer;
   --features-block__image-width: 50vw;
   position: relative;
   flex: 0 0 50%;
@@ -348,6 +349,14 @@ ul {
 }
 .quote__wrapper {
   padding: 30px;
+  position: relative;
+}
+.quote__wrapper .far {
+  color: #4d533c;
+  cursor: pointer;
+  position: absolute;
+  top: 7px;
+  left: 427px;
 }
 .quote__text {
   font-style: italic;

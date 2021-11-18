@@ -1,22 +1,53 @@
 const quote = $('.quote')
 const featuresImg = $('.features-block__image')
-const windowWidth = $('window').width()
-const mediaQuery = window.matchMedia('(max-width: 1200px)')
+var windowWidth = $('window').width()
+const buttonClose = $('.far')
+const mediaQuery = window.matchMedia('(max-width: 1024px)')
 
-if (quote.hasClass('quote-disable')) {
-  featuresImg.on('click', function(){
-    quote.css({'position':'absolute', 'top':'x', 'left':'y'}).toggleClass('quote-active');
-  });
+function removeQuote() {
+  quote.removeClass('quote-active');
 }
 
-function clickPos() {
-  featuresImg.on('click', function(e){
-    e.stopPropagation();
-    x = e.pageX;
-    y = e.pageY
-  })
+function addQuote() {
+  if ($('window').width() >= 992) {
+    $('.features-block__image').click(function(e) {
+      e.stopPropagation();
+      var xClick = e.pageX - $(this).offset().left;
+      var yClick = e.pageY - $(this).offset().top;
+      $(this).next('.fetures-block__quote').css({
+        "top": yClick,
+        "left": xClick
+      }).toggleClass('quote-active');
+    })
+  } else {
+    $('.features-block__image').click(function() {
+      return false;
+    })
+  }
 }
 
+$(window).on('load resize', addQuote())
+
+
+
+
+buttonClose.on('click', function(){
+  removeQuote();
+})
+
+$(window).click(function(e){
+  if (quote.hasClass('quote-active')) {
+    removeQuote();
+  };
+});
+
+$(window).resize(function(){
+  removeQuote();
+})
+
+quote.click(function(e){
+  e.stopPropagation();
+})
 
 
 
