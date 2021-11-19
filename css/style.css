@@ -1,3 +1,6 @@
+body {
+  font-size: 22px;
+}
 *,
 *::before,
 *::after {
@@ -355,8 +358,8 @@ ul {
   color: #4d533c;
   cursor: pointer;
   position: absolute;
-  top: 7px;
-  left: 427px;
+  top: 4px;
+  left: 426px;
 }
 .quote__text {
   font-style: italic;

@@ -18,10 +18,8 @@ function addQuote() {
         "top": yClick,
         "left": xClick
       }).toggleClass('quote-active');
-    } else {
-      $('.features-block__image').click(function(){
-        return false;
-      })
+    } else  if($(window).width() <= 992) {
+      $(this).next('.fetures-block__quote').toggleClass('quote-active')
     }
   })
 }
